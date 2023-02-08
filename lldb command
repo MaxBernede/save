@@ -1,0 +1,8 @@
+target stop-hook add --one-liner "frame variable"
+
+
+PUT WATCHPOINT WHEN WRITTEN TO PTR
+wa s e -- my_ptr 
+
+replace libft.h par ../libft.h
+sed -i 's/#include "libft.h"/#include "..\/libft.h"/g' $(find . -name "*.h" -o -name "*.c")
