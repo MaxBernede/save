@@ -1,0 +1,66 @@
+import pyautogui as pg
+import time
+import cv2
+import os
+
+imageOffset = 25
+
+def checkboo1():
+    try:
+        file_name = os.path.join(os.path.dirname(__file__), 'boo1.jpg')
+        assert os.path.exists(file_name)
+        img = cv2.imread(file_name, -1)
+
+        pos = pg.locateOnScreen(img,confidence=0.8)
+        pg.moveTo(pos[0]+imageOffset,pos[1]+imageOffset)
+        pg.click()
+        time.sleep(1)
+    except:
+        print("No boo1")
+        checkboo2()
+        im1 = pg.screenshot()
+
+def checkboo2():
+    try:
+        file_name = os.path.join(os.path.dirname(__file__), 'boo2.jpg')
+        assert os.path.exists(file_name)
+        img = cv2.imread(file_name, -1)
+
+        pos = pg.locateOnScreen(img,confidence=0.8)
+        pg.moveTo(pos[0]+imageOffset,pos[1]+imageOffset)
+        pg.click()
+        time.sleep(1)
+    except:
+        print("No boo2")
+        checkboo3()
+        im1 = pg.screenshot()
+
+def checkboo3():
+    try:
+        file_name = os.path.join(os.path.dirname(__file__), 'boo3.jpg')
+        assert os.path.exists(file_name)
+        img = cv2.imread(file_name, -1)
+
+        pos = pg.locateOnScreen(img,confidence=0.8)
+        pg.moveTo(pos[0]+imageOffset,pos[1]+imageOffset)
+        pg.click()
+        time.sleep(1)
+    except:
+        print("No boo3")
+        checkboo4()
+        im1 = pg.screenshot()
+def checkboo4():
+    try:
+        file_name = os.path.join(os.path.dirname(__file__), 'boo4.jpg')
+        assert os.path.exists(file_name)
+        img = cv2.imread(file_name, -1)
+
+        pos = pg.locateOnScreen(img,confidence=0.8)
+        pg.moveTo(pos[0]+imageOffset,pos[1]+imageOffset)
+        pg.click()
+        time.sleep(1)
+    except:
+        print("No boo4")
+        im1 = pg.screenshot()
+
+checkboo1()
